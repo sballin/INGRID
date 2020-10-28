@@ -93,7 +93,7 @@ patch_data:
   preferences:
     new_file: True
     new_fname: ../data/SF75/TCV/SF75_patches_data.npy
-  use_file: False
+  use_file: True
 target_plates:
   plate_E1:
     file: ../data/SF75/TCV/plate_e1.txt
