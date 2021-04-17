@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 import pathlib
 import inspect
 from scipy.optimize import root, minimize
+from rich.progress import track
 
 import yaml as yml
 import os
@@ -1803,7 +1804,7 @@ class TopologyUtils():
         if RestartScratch:
             self.CurrentListPatch = {}
 
-        for name, patch in self.patches.items():
+        for name, patch in track(self.patches.items(), description='Full grid', transient=True):
 
             if self.distortion_correction.get(name) is not None:
                 patch.distortion_correction = self.distortion_correction.get(name)
